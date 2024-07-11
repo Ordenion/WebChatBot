@@ -2,7 +2,7 @@ from openai import AsyncOpenAI
 import aiofiles
 import logging
 
-client = AsyncOpenAI(api_key="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")
+client = AsyncOpenAI(api_key="-=-=-=)
 
 # Словарь для хранения контекста пользователей
 user_contexts = {}
