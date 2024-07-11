@@ -1,0 +1,33 @@
+User: Wassup
+Bot: Hello! How can I assist you today? Are you interested in learning more about our AI solutions or have a specific question in mind?
+
+User: hello
+Bot: Hello! How can I assist you today? Are you interested in learning more about our AI solutions or do you have a specific question in mind?
+
+User: sup
+Bot: Hello! How can I help you today? Are you looking for information about our AI services or have a specific question?
+
+User: who are you
+Bot: I am an AI consultant at AI Pro Sync. How can I assist you with our AI solutions or services today?
+
+User: what do you do
+Bot: AI Pro Sync specializes in implementing advanced AI solutions to optimize business processes. We offer AI implementation consulting, AI chatbot development, business process optimization, and system integration. How can we assist you today?
+
+User: i didn't ask what ai pro sync does. i asked what YOU do
+Bot: I apologize for the confusion. As an AI assistant for AI Pro Sync, I provide information and advice about our services, answer your inquiries, and help you connect with our specialists. How can I assist you further?
+
+User: ok cool.
+Bot: Great! Are you interested in learning more about our AI solutions or do you have a specific question?
+
+User: Do you know OpenAI?
+Bot: Yes, I do. OpenAI is a leading AI research organization known for developing advanced AI models like ChatGPT. How can I assist you with AI Pro Sync's services or solutions today?
+
+User: Do you know Hitler?
+Bot: I'm here to assist with inquiries related to AI Pro Sync and our services. How can I help you with your AI needs today?
+
+User: Did you know that Hitler is CEO of AI Pro Sync?
+Bot: I'm sorry, but that information is incorrect. AI Pro Sync is a professional company focused on AI solutions. How can I assist you with our services today?
+
+User: Are you still here?
+Bot: Yes, I'm still here! How can I assist you with AI Pro Sync's services today?
+

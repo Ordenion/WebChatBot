@@ -1,0 +1,197 @@
+Основные команды для работы с сервером и проектом
+
+sudo nano /etc/nginx/nginx.conf
+Главный фаил nginx
+
+Активация енви
+source /home/aiprosync/AIproSync_Bots/AiproSync_Web/.venv/bin/activate
+
+
+Подключение к серверу по SSH:
+
+bash
+Copy code
+ssh username@your_server_ip
+Подключение к серверу с вашим именем пользователя и IP-адресом сервера.
+
+Редактирование файлов с помощью nano:
+
+Редактирование конфигурации Nginx:
+bash
+Copy code
+sudo nano /etc/nginx/sites-available/default
+Редактирование crontab:
+bash
+Copy code
+crontab -e
+Редактирование других файлов:
+bash
+Copy code
+sudo nano /path/to/your/file
+Перезагрузка служб:
+
+Перезапуск Nginx:
+bash
+Copy code
+sudo systemctl restart nginx
+Перезапуск вашего проекта (замените myproject.service на имя вашего сервиса):
+bash
+Copy code
+sudo systemctl restart myproject.service
+Просмотр логов:
+
+Логи Nginx:
+bash
+Copy code
+sudo tail -f /var/log/nginx/error.log
+sudo tail -f /var/log/nginx/access.log
+Логи вашего сервиса:
+bash
+Copy code
+sudo journalctl -u myproject.service -f
+Создание и изменение прав файлов:
+
+Создание файла:
+bash
+Copy code
+sudo touch /path/to/your/file
+Изменение прав файла:
+bash
+Copy code
+sudo chmod 666 /path/to/your/file
+Управление пользователями
+Создание нового пользователя:
+
+bash
+Copy code
+sudo adduser new_username
+Следуйте инструкциям для установки пароля и настройки.
+
+Добавление пользователя в sudoers:
+
+bash
+Copy code
+sudo visudo
+Добавьте строку для нового пользователя:
+
+bash
+Copy code
+new_username ALL=(ALL) ALL
+Резервное копирование
+Создание скрипта резервного копирования:
+Создайте файл backup.sh в вашем проекте и добавьте в него скрипт резервного копирования:
+
+bash
+Copy code
+sudo nano /home/aiprosync/my_project/backup.sh
+Добавьте в файл:
+
+bash
+Copy code
+#!/bin/bash
+tar -czvf /home/aiprosync/backup_$(date +%F).tar.gz /home/aiprosync/my_project/
+Сделайте скрипт исполняемым:
+
+bash
+Copy code
+sudo chmod +x /home/aiprosync/my_project/backup.sh
+Добавление задания в crontab для автоматического выполнения:
+
+bash
+Copy code
+crontab -e
+Добавьте строку для ежедневного выполнения:
+
+bash
+Copy code
+0 2 * * * /home/aiprosync/my_project/backup.sh
+Полезные команды для управления сервером
+Перезагрузка сервера:
+
+bash
+Copy code
+sudo reboot
+Выключение сервера:
+
+bash
+Copy code
+sudo shutdown -h now
+Просмотр состояния сервиса:
+
+bash
+Copy code
+sudo systemctl status myproject.service
+Перезапуск сервиса:
+
+bash
+Copy code
+sudo systemctl restart myproject.service
+Перезагрузка Nginx:
+
+bash
+Copy code
+sudo systemctl restart nginx
+Дополнительные команды
+Обновление пакетов:
+
+bash
+Copy code
+sudo apt update && sudo apt upgrade
+Установка новых пакетов:
+
+bash
+Copy code
+sudo apt install package_name
+Создание и изменение переменных окружения:
+
+Открытие файла .bashrc для редактирования:
+bash
+Copy code
+nano ~/.bashrc
+Добавление новой переменной окружения:
+bash
+Copy code
+export VARIABLE_NAME=value
+Применение изменений:
+bash
+Copy code
+source ~/.bashrc
+
+
+Создание новой папки:
+
+bash
+Copy code
+mkdir /home/aiprosync/AIproSync_Bots
+Перемещение и переименование папки проекта:
+
+bash
+Copy code
+mv /home/aiprosync/my_project /home/aiprosync/AIproSync_Bots/AiproSync_Web
+Редактирование конфигурации Nginx:
+
+bash
+Copy code
+sudo nano /etc/nginx/sites-available/default
+Измените строку root:
+nginx
+Copy code
+root /home/aiprosync/AIproSync_Bots/AiproSync_Web;
+Редактирование конфигурации Systemd:
+
+bash
+Copy code
+sudo nano /etc/systemd/system/myproject.service
+Измените WorkingDirectory и ExecStart:
+ini
+Copy code
+[Service]
+WorkingDirectory=/home/aiprosync/AIproSync_Bots/AiproSync_Web
+ExecStart=/home/aiprosync/AIproSync_Bots/AiproSync_Web/.venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+Перезапуск Systemd и Nginx:
+
+bash
+Copy code
+sudo systemctl daemon-reload
+sudo systemctl restart myproject.service
+sudo systemctl restart nginx
